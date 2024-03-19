@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 output_path=$1
 
 source bash_functions.sh
@@ -13,8 +12,8 @@ msg "Harvesttools version $(harvesttools --version)"
 snps_outfile="${output_path}"/SNPs.fa
 msg "INFO: starting SNP extraction"
 harvesttools \
- -i "${output_path}"/parsnp.ggr \
- -S "${snps_outfile}"
+  -i "${output_path}"/parsnp.ggr \
+  -S "${snps_outfile}"
 msg "INFO: finished SNP extraction"
 
 if ! verify_file_minimum_size "${snps_outfile}" 'SNP' '10c'; then
